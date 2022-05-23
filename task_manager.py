@@ -6,6 +6,7 @@ add a code for compulsory task 2 to complete this capstone'''
 #=====importing libraries===========
 import os
 from datetime import datetime
+from typing import List
 #====Login Section====
 # Declare file paths in the global scope so that they can be referred to more easily later.
 # Use the path.join(__file__, file) pattern so that the program runs even if the working directory is different from the file directory.
@@ -13,9 +14,9 @@ user_txt = os.path.join(os.path.dirname(__file__), "user.txt")
 tasks_txt = os.path.join(os.path.dirname(__file__), "tasks.txt")
 
 # Keep logged_in, username in scope because we need them later.
-logged_in = False           
-credentials = []
-username = ''
+logged_in: bool = False           
+credentials: List[str] = []
+username: str = ''
 with open(user_txt, 'r') as userdata:      # Use the with-open pattern since userdata won't be necessary for the entire program and for all users.                        # We won't need the password later either.
     while not logged_in:
         while not username:
@@ -47,7 +48,7 @@ Task description:
 -------------------------------------------'''
 stats_template = '''\
 --------------------------
-"Statistics
+Statistics
   Users:{0}
   Tasks:{1}
 --------------------------'''
